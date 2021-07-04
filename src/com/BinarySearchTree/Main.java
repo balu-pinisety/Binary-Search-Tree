@@ -25,6 +25,8 @@ public class Main {
 		binary.insert(63);
 		binary.insert(67);
 		binary.size();
+		binary.search(65);
+		binary.search(64);
 	}
 
 }
