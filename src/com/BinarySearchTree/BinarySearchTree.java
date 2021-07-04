@@ -64,4 +64,41 @@ public class BinarySearchTree {
 		return count;
 	}
 	
+	/**
+	 * Ability to say whether given element is present or not
+	 * @param data
+	 */
+	public void search(int data) {
+		int flag = search(root,data);
+		if (flag==0) {
+			System.out.println(data+" is not present in Binary Tree\n");
+		} else {
+			System.out.println(data+" is present in Binary Tree\n");
+		}
+	}
+	
+    /**
+     * Ability to search the whole tree for given element
+     * Return the flag data after searching 
+     * @param node, data
+     * @return flag
+     */
+    public int search(Node node, int data) {
+        int flag = 0;
+        // check whether root is null.
+        if (node == null) {
+            return flag;
+        }
+        while (node!=null) {
+            if (data < node.getData()) {
+                node = node.getLeft();
+            } else if (data > node.getData()) {
+                node = node.getRight();
+            } else {
+                flag=1;
+                break;
+            }
+        }
+        return flag;
+    }
 }
